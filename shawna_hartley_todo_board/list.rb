@@ -50,19 +50,17 @@ class List
     end
 
     def print
-        puts label
-        # puts String.ljust
-        puts "Index | Item          | Deadline"
-        # puts String.ljust
+        puts "=".ljust(30, "=")
+        puts label.upcase
+        puts "=".ljust(30, "=")
+        puts "Index | Item  | Deadline"
+        puts "-".ljust(30, "-")
         @items.each_with_index do |instance, ind|
             puts "#{ind} | #{instance.title} | #{instance.deadline}"
-
-
-        puts #{i} "|" #{@items[i].name} "|" #{@items[i].deadline}
         end
-        # puts String.ljust
+        puts "=".ljust(30, "=")
     end
-    
+
 end
 
 list = List.new("todo")
@@ -76,5 +74,5 @@ list.add_item("workout", "2022-11-19")
 # p list.valid_index?(8)
 # p list.valid_index?(-2)
 # p list.valid_index?(1)
-# p list.print
+p list.print
 
